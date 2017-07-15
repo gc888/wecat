@@ -1,0 +1,29 @@
+{
+  "name": "wem",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "wem": "./bin/wem.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guox191/wem.git"
+  },
+  "author": "Mr.Betty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guox191/wem/issues"
+  },
+  "homepage": "https://github.com/guox191/wem#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "mkdirp": "^0.5.1",
+    "ora": "^1.3.0",
+    "progress": "^2.0.0",
+    "update-notifier": "^2.2.0",
+    "yargs": "^8.0.2"
+  }
+}
