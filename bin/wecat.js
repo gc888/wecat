@@ -9,11 +9,12 @@ console.log()
 
 function createHandler(args) {
   if (!local.checkExist()) {
-    console.log('No wem.json file') 
+    console.log('No wecat.json file') 
     return
   }
   const entry = args._[0]
   switch (entry) {
+    case 'i':
     case 'install':
       install()
       break;
@@ -23,9 +24,9 @@ function createHandler(args) {
 }
 
 yargs
-  .usage('wem [command] [options]')
+  .usage('wecat [command] [options]')
   .command(['init'], 'Initalize', () => {}, createHandler)
-  .command(['install'], 'Install', () => {}, createHandler)
+  .command(['install', 'i'], 'Install', () => {}, createHandler)
   .version(pkg.version)
   .alias('version', 'V')
   .alias('help', 'H')

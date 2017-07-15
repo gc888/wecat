@@ -1,23 +1,23 @@
 {
-  "name": "wem",
+  "name": "wecat",
   "version": "0.1.0",
-  "description": "",
+  "description": "A modularization solution of wechat app",
   "bin": {
-    "wem": "./bin/wem.js"
+    "wecat": "./bin/wecat.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/guox191/wem.git"
+    "url": "git+https://github.com/guox191/wecat.git"
   },
   "author": "Mr.Betty",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guox191/wem/issues"
+    "url": "https://github.com/guox191/wecat/issues"
   },
-  "homepage": "https://github.com/guox191/wem#readme",
+  "homepage": "https://github.com/guox191/wecat#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "mkdirp": "^0.5.1",
