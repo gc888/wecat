@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 
 const yargs = require('yargs')
+const co = require('co')
 const pkg = require('../package.json')
 const local = require('../lib/local')
-const install = require('../lib/install')
 const linker = require('../lib/linker')
-
-console.log()
+const fetcher = require('../lib/fetcher')
 
 function createHandler(args) {
   if (!local.checkExist()) {
@@ -18,20 +17,30 @@ function createHandler(args) {
   switch (entry) {
     case 'i':
     case 'install':
-      install()
+      co(function* () {
+        yield fetcher()
+        yield linker()
+      })
       break
     case 'link':
+      linker()
       break
     case 'download':
-      break
-    case 'init':
+      fetcher()
       break
   }
 }
 
 yargs
   .usage('wecat [command] [options]')
-  .command(['init'], 'Initalize', () => {}, createHandler)
+  .command(['init'], 'Initalize', () => {}, () => {
+    if (!local.checkExist()) {
+      local.init()
+      console.log('Done!')
+    } else {
+      console.log('You have done!') 
+    }
+  })
   .command(['install', 'i'], 'Install', () => {}, createHandler)
   .command(['link'], 'Link', () => {}, createHandler)
   .command(['download'], 'Download', () => {}, createHandler)
