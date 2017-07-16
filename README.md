@@ -1,6 +1,8 @@
 # Wecat
 微信小程序模块化方案
 
+[English](README-en.md)
+
 ## 安装
 ```
 npm install -g wecat
@@ -22,7 +24,7 @@ wecat download
 wecat link
 ```
 
-## `wecat.json`
+### `wecat.json`
 文件结构大致如下.
 ```
 {

@@ -6,8 +6,12 @@
     "wecat": "./bin/wecat.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "xo"
   },
+  "files": [
+    "bin",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guox191/wecat.git"
@@ -26,5 +30,12 @@
     "progress": "^2.0.0",
     "update-notifier": "^2.2.0",
     "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false
   }
 }

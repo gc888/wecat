@@ -2,10 +2,13 @@
 
 const yargs = require('yargs')
 const co = require('co')
+const updateNotifier = require('update-notifier')
 const pkg = require('../package.json')
 const local = require('../lib/local')
 const linker = require('../lib/linker')
 const fetcher = require('../lib/fetcher')
+
+updateNotifier({pkg}).notify()
 
 function createHandler(args) {
   if (!local.checkExist()) {
@@ -17,7 +20,7 @@ function createHandler(args) {
   switch (entry) {
     case 'i':
     case 'install':
-      co(function* () {
+      co(function * () {
         yield fetcher()
         yield linker()
       })
