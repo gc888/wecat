@@ -4,6 +4,7 @@ const yargs = require('yargs')
 const pkg = require('../package.json')
 const local = require('../lib/local')
 const install = require('../lib/install')
+const linker = require('../lib/linker')
 
 console.log()
 
