@@ -12,14 +12,19 @@ function createHandler(args) {
     console.log('No wecat.json file') 
     return
   }
+  local.setConfig()
   const entry = args._[0]
   switch (entry) {
     case 'i':
     case 'install':
       install()
-      break;
+      break
+    case 'link':
+      break
+    case 'download':
+      break
     case 'init':
-      break;
+      break
   }
 }
 
@@ -27,9 +32,15 @@ yargs
   .usage('wecat [command] [options]')
   .command(['init'], 'Initalize', () => {}, createHandler)
   .command(['install', 'i'], 'Install', () => {}, createHandler)
+  .command(['link'], 'Link', () => {}, createHandler)
+  .command(['download'], 'Download', () => {}, createHandler)
   .version(pkg.version)
   .alias('version', 'V')
   .alias('help', 'H')
   .help()
   .argv
+
+if (!yargs.argv._[0]) {
+  yargs.showHelp()
+}
 
