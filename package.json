@@ -1,6 +1,6 @@
 {
   "name": "wecat",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A modularization solution of wechat app",
   "bin": {
     "wecat": "./bin/wecat.js"

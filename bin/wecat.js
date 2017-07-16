@@ -31,19 +31,21 @@ function createHandler(args) {
   }
 }
 
+function initHandler() {
+  if (!local.checkExist()) {
+    local.init()
+    console.log('Done!')
+  } else {
+    console.log('You have done!') 
+  }
+}
+
 yargs
   .usage('wecat [command] [options]')
-  .command(['init'], 'Initalize', () => {}, () => {
-    if (!local.checkExist()) {
-      local.init()
-      console.log('Done!')
-    } else {
-      console.log('You have done!') 
-    }
-  })
-  .command(['install', 'i'], 'Install', () => {}, createHandler)
-  .command(['link'], 'Link', () => {}, createHandler)
-  .command(['download'], 'Download', () => {}, createHandler)
+  .command(['init'], 'Initalize wecat project', () => {}, initHandler)
+  .command(['install', 'i'], 'Install all dependencies', () => {}, createHandler)
+  .command(['link'], 'Link node_modules files', () => {}, createHandler)
+  .command(['download'], 'Download targets', () => {}, createHandler)
   .version(pkg.version)
   .alias('version', 'V')
   .alias('help', 'H')
