@@ -12,7 +12,7 @@ updateNotifier({pkg}).notify()
 
 function createHandler(args) {
   if (!local.checkExist()) {
-    console.log('No wecat.json file') 
+    console.log('No wecat.json file')
     return
   }
   local.setConfig()
@@ -20,7 +20,7 @@ function createHandler(args) {
   switch (entry) {
     case 'i':
     case 'install':
-      co(function * () {
+      co(function* () {
         yield fetcher()
         yield linker()
       })
@@ -31,18 +31,21 @@ function createHandler(args) {
     case 'download':
       fetcher()
       break
+    default:
+      break
   }
 }
 
 function initHandler() {
-  if (!local.checkExist()) {
+  if (local.checkExist()) {
+    console.log('You have done!')
+  } else {
     local.init()
     console.log('Done!')
-  } else {
-    console.log('You have done!') 
   }
 }
 
+/* eslint no-unused-expressions: 0 */
 yargs
   .usage('wecat [command] [options]')
   .command(['init'], 'Initalize wecat project', () => {}, initHandler)

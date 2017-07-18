@@ -36,6 +36,11 @@
   },
   "xo": {
     "space": true,
-    "semicolon": false
+    "semicolon": false,
+    "rules": {
+      "comma-dangle": 0,
+      "generator-star-spacing": ["error", {"before": false, "after": true}],
+      "object-curly-spacing": 0
+    }
   }
 }
