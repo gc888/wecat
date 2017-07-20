@@ -12,18 +12,26 @@
     "bin",
     "lib"
   ],
+  "keywords": [
+    "wechat",
+    "wechat app",
+    "modularization",
+    "weixin app"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guox191/wecat.git"
   },
-  "author": "Mr.Betty",
+  "author": "Mr.Betty<guoxiang191@google.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/guox191/wecat/issues"
   },
   "homepage": "https://github.com/guox191/wecat#readme",
   "dependencies": {
+    "D": "0.0.1",
     "axios": "^0.16.2",
+    "chalk": "^2.0.1",
     "co": "^4.6.0",
     "mkdirp": "^0.5.1",
     "ora": "^1.3.0",
@@ -39,7 +47,13 @@
     "semicolon": false,
     "rules": {
       "comma-dangle": 0,
-      "generator-star-spacing": ["error", {"before": false, "after": true}],
+      "generator-star-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
       "object-curly-spacing": 0
     }
   }

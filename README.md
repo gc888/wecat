@@ -7,7 +7,7 @@
 - 依赖声明
 - 类库自动安装
 - 版本管理 
-- More
+- Waiting for more...
 
 ## 安装
 全局安装提供命令行工具。
@@ -30,6 +30,7 @@ wecat download
 或
 wecat link
 ```
+- 所使用的类库需支持 `CommonJS` 规范, 并注意检测是否兼容小程序环境，如正确处理 `global` is undefined 等问题。由于直接使用单文件，其中不得 `require` 其他无法引用到的文件及全部`node_module`。
 
 ## 定义
 `wecat.json` 文件结构大致如下。
@@ -48,7 +49,9 @@ wecat link
 |`link`|`Object`|声明来自于 `node_modules` 的依赖|`required`|
 
 `Target`结构体：
+
 |字段|含义|
+|---|---|
 |`name`|包名(repo/name)|
 |`version`|Release 版本|
 |`filename`|下载到小程序目录的位置|
